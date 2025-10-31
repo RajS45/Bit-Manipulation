@@ -33,7 +33,5 @@ int result = a ^ b;  // result: 0110 (binary), which is 6
 
 This XOR operation highlights the bits that differ between a and b.
 
-Let me know if you'd like to explore specific tricks like checking powers of two, bit masking, or optimizing algorithms with bits!
-
 
 
