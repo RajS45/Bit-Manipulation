@@ -1,0 +1,35 @@
+->> Minimum Bit Flips to convert Number..
+// Method-1
+class Solution {
+    public int minBitsFlip(int start, int goal) {
+        int ans = start ^ goal;
+        int cnt = 0;
+        while (ans != 0) {
+            cnt += (ans & 1);
+            ans = ans >> 1;
+        }
+        return cnt;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        int start = 10;
+        int goal = 7;
+        int flips = sol.minBitsFlip(start, goal);
+        System.out.println(flips);
+    }
+}
+
+// Method-2
+class Solution {
+    public int minBitsFlip(int start, int goal) {
+        return Integer.bitCount(start ^ goal);
+    }
+        public static void main(String[] args) {
+        Solution sol = new Solution();
+        int start = 10;
+        int goal = 7;
+        int flips = sol.minBitsFlip(start, goal);
+        System.out.println(flips);
+    }
+}
