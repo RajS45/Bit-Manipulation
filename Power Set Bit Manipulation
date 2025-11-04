@@ -1,0 +1,27 @@
+->> Power Set Bit Manipulation
+
+class Solution {
+    public List<List<Integer>> powerSet(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        int n = nums.length;
+        int subsetCount = 1 << n;
+        for (int i = 0; i < subsetCount; i++) {
+            List<Integer> aList = new ArrayList<>();
+            for (int j = 0; j < n; j++) {
+                if ((i & (1 << j)) != 0) {
+                    aList.add(nums[j]);
+                }
+            }
+            ans.add(aList);
+        }
+        return ans;
+    }
+    public static void main(String[] args) {
+        int[] arr = {12, 2, 3};
+        Solution sol = new Solution();
+        List<List<Integer>> aws = sol.powerSet(arr);
+        for (List<Integer> subset : aws) {
+            System.out.println(subset);
+        }
+    }
+}
